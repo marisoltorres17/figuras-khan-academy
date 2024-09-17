@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Processing.JS dentro de pagina HTML</title>
+    </head>
+    <body>
+    <!--Crear el canvas dentro de la pagina web -->
+        <canvas id="miLienzo1"></canvas>
+        <canvas id="miLienzo2"></canvas>
+        <canvas id="miLienzo3"></canvas>
+        <canvas id="miLienzo4"></canvas>
+        <canvas id="miLienzo5"></canvas>
+    </body>
+    <!-- Incluir la libreria processing.js -->
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+<script>
+    var codigoDePrograma1 = function(instanciaProcessing) {
+        with (instanciaProcessing) {
+            size(400, 400);
+            frameRate(30);
+            
+            //Pegar codigo de Khan Academy aqui:
+            //circulo de la parte inferior
+            ellipse(200, 300, 150, 150); 
+
+            //Circulo de la parte superior
+            ellipse(200,200,100,100);
+
+            //Circulo para la cabeza del muñeco
+            ellipse(200,150,80,80);
+          
+        }};
+    var codigoDePrograma2 = function(instanciaProcessing) {
+        with (instanciaProcessing) {
+            size(400, 400);
+            frameRate(30);
+            
+            //Pegar codigo de Khan Academy aqui:
+            // The ground
+            //linea del piso
+            rect(5,350,400,100);
+
+
+            ellipse(200, 300, 150, 150);
+            ellipse(200, 200, 100, 100);
+            ellipse(200, 120, 75, 75);
+
+            //Comando para los brazos
+            line(160,200,40,10);
+line        line(240,200,400,30);
+
+ 
+  
+        }};
+    var codigoDePrograma3 = function(instanciaProcessing) {
+        with (instanciaProcessing) {
+            size(400, 400);
+            frameRate(30);
+            
+            //Pegar codigo de Khan Academy aqui:
+            background(186, 145, 20); // wooden table
+            ellipse(200, 200, 350, 350); // plate
+
+            fill(227, 182, 182);
+
+            ellipse(200, 200, 300, 300); 
+            fill(255, 255, 255);
+
+            ellipse(170,200,91,90);
+            fill(250, 250, 250);
+
+
+
+            ellipse(100,200,90,90);
+            fill(255, 221, 31);
+
+            ellipse(170,200,40,30);
+            fill(230, 182, 9);
+
+
+            ellipse(100,200,40,30);
+            fill(232, 42, 99);
+
+            rect(250,150,20,150);
+            rect(280, 150, 20, 150);
+
+
+
+        }};
+    var codigoDePrograma4 = function(instanciaProcessing) {
+        with (instanciaProcessing) {
+            size(400, 400);
+            frameRate(30);
+            
+            //Pegar codigo de Khan Academy aqui:
+            var eyeSize=12;
+
+            var toothLenght = 15;
+            ellipse(150, 70, 60, 120);  // left ear
+            ellipse(240, 70, 60, 120);  // right ear
+
+            ellipse(200, 170, 150, 150);    // face
+
+            fill(0, 0, 0);
+            ellipse(170, 150, eyeSize, eyeSize);  // left eye
+            ellipse(230, 150, eyeSize , eyeSize);  // right eye
+
+            line(150, 200, 250, 200);   // mouth
+
+            noFill();
+            rect(185, 200,15, toothLenght); // left tooth
+            rect(200, 200, 15, toothLenght); // right tooth
+          
+        }};    
+    var codigoDePrograma5 = function(instanciaProcessing) {
+        with (instanciaProcessing) {
+            size(400, 400);
+            frameRate(30);
+            
+            //Pegar codigo de Khan Academy aqui:
+            var x = 200;
+            var y = 250;
+
+            noStroke();
+            fill(30, 204, 91); // a nice froggy green!
+
+            ellipse(x, y, 200, 100); // face
+            ellipse(x - 50, y - 50, 40, 40); // left eye socket
+
+            ellipse(x + 50, y - 50, 40, 40); // right eye socket
+
+            fill(255, 255, 255); // for the whites of the eyes!
+
+            ellipse(x - 50, y - 50, 30, 30); // left eyeball
+            ellipse(x + 50, y - 50, 30, 30); // right eyeball
+
+            fill(0, 0, 0);
+            rect(x-55,y-55,10,10);
+            rect(x+45,y-55,10,10);
+
+
+            fill(255, 0, 0);
+            ellipse(x,y,120,40);
+
+
+
+        }};
+
+// Instancia el canvas que usara ProcessingJS
+    var canvas1 = document.getElementById("miLienzo1");
+    var canvas2 = document.getElementById("miLienzo2");
+    var canvas3 = document.getElementById("miLienzo3");
+    var canvas4 = document.getElementById("miLienzo4");
+    var canvas5 = document.getElementById("miLienzo5");
+     // Pasa la funcion al constructor del ProcessingJS
+    var instanc1 = new Processing(canvas1, codigoDePrograma1);
+    var instanc2 = new Processing(canvas2, codigoDePrograma2);
+    var instanc3 = new Processing(canvas3, codigoDePrograma3);
+    var instanc4 = new Processing(canvas4, codigoDePrograma4);
+    var instanc5 = new Processing(canvas5, codigoDePrograma5);
+
+
+</script>
+</html>
